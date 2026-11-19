@@ -1,0 +1,585 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+        content="한빛시청 민원 부서 지원용 개인 강점 페이지">
+  <title>한빛시청 민원 부서 | 개인 강점</title>
+
+  <style>
+    :root {
+      --navy: #183554;
+      --orange: #c45116;
+      --background: #f4f6fa;
+      --white: #ffffff;
+      --text: #202c38;
+      --muted: #4c5b6b;
+      --border: #d9e1eb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 24px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: "Malgun Gothic",
+                   "Apple SD Gothic Neo",
+                   sans-serif;
+      font-size: 20px;
+      line-height: 1.85;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .container {
+      width: min(calc(100% - 28px), 780px);
+      margin: 0 auto;
+    }
+
+    section {
+      margin: 22px 0;
+      padding: 36px 26px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(32px, 8vw, 46px);
+      line-height: 1.45;
+      letter-spacing: -1px;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-size: clamp(27px, 6.5vw, 34px);
+      line-height: 1.4;
+      color: var(--navy);
+      margin-bottom: 28px;
+    }
+
+    h3 {
+      font-size: 23px;
+      color: var(--navy);
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 18px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    /* 1. 첫 화면 */
+
+    .hero {
+      margin-top: 14px;
+      padding: 48px 28px;
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+    }
+
+    .hero h1 {
+      color: var(--white);
+    }
+
+    .hero .eyebrow {
+      color: #ffd1aa;
+    }
+
+    .hero-description {
+      font-size: 21px;
+      color: #edf2f8;
+    }
+
+    .hero-evidence {
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid #8293a7;
+      font-size: 20px;
+    }
+
+    /* 페이지 전체에서 강조 버튼 한 개 */
+
+    .cta {
+      display: block;
+      width: 100%;
+      padding: 22px 16px;
+      margin-top: 34px;
+      background: var(--orange);
+      color: #ffffff;
+      text-align: center;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 800;
+      border-radius: 14px;
+      min-height: 68px;
+    }
+
+    .cta:focus-visible {
+      outline: 3px solid #ffffff;
+      outline-offset: 5px;
+    }
+
+    /* 공통 요소 */
+
+    .item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .item:first-of-type {
+      padding-top: 0;
+    }
+
+    .item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .number {
+      display: inline-block;
+      color: var(--orange);
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .placeholder {
+      display: inline;
+      padding: 3px 8px;
+      color: #8b3e0e;
+      background: #fff0de;
+      font-weight: 700;
+      border-radius: 5px;
+    }
+
+    .detail {
+      color: var(--muted);
+    }
+
+    .fact {
+      margin-top: 14px;
+      padding: 18px;
+      background: var(--background);
+      border-radius: 12px;
+    }
+
+    .fact p {
+      margin-bottom: 10px;
+    }
+
+    .fact p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 4. 사례 */
+
+    .case-step {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .case-step:last-child {
+      border-bottom: none;
+    }
+
+    .case-label {
+      display: block;
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    /* 5. 업무 태도 */
+
+    .attitude {
+      padding-left: 26px;
+      margin: 0;
+    }
+
+    .attitude li {
+      padding: 12px 0;
+    }
+
+    /* 하단 */
+
+    footer {
+      padding: 28px 12px 50px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* 휴대폰 최적화 */
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 20px;
+        line-height: 1.9;
+      }
+
+      .container {
+        width: calc(100% - 24px);
+      }
+
+      section {
+        padding: 36px 24px;
+        margin: 18px 0;
+        border-radius: 18px;
+      }
+
+      .hero {
+        padding: 48px 25px;
+      }
+
+      h1 {
+        font-size: clamp(31px, 8vw, 39px);
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      h3 {
+        font-size: 23px;
+      }
+
+      .item {
+        padding: 26px 0;
+      }
+
+      .cta {
+        font-size: 22px;
+        padding: 22px 14px;
+      }
+    }
+
+    @media (min-width: 700px) {
+      section {
+        padding: 44px;
+      }
+
+      .hero {
+        padding: 60px 48px;
+      }
+
+      .cta {
+        max-width: 360px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+
+    <!-- 1. 첫 화면 -->
+    <section class="hero" aria-labelledby="main-title">
+
+      <p class="eyebrow">
+        공공기관 지원용 개인 강점
+      </p>
+
+      <h1 id="main-title">
+        한빛시청 민원 부서에<br>
+        지원합니다
+      </h1>
+
+      <p class="hero-description">
+        지원 직무 핵심 역량<br>
+        문서 작성 · 민원 응대 · 데이터 정리
+      </p>
+
+      <p class="hero-evidence">
+        이번 학기 산출물 <strong>3개</strong>를
+        중심으로 직무 역량을 제시합니다.
+      </p>
+
+      <a class="cta" href="#outputs">
+        산출물 3개 보기
+      </a>
+
+    </section>
+
+    <!-- 2. 강점 3가지 -->
+    <section aria-labelledby="strength-title">
+
+      <h2 id="strength-title">
+        직무 역량 3가지
+      </h2>
+
+      <div class="item">
+        <span class="number">01</span>
+        <h3>문서 작성</h3>
+        <p>
+          제시 자료: 이번 학기 문서 작성 산출물
+        </p>
+        <p>
+          작성 문서 수:
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+      <div class="item">
+        <span class="number">02</span>
+        <h3>민원 응대</h3>
+        <p>
+          제시 자료: 이번 학기 민원 응대 산출물
+        </p>
+        <p>
+          응대 사례 또는 실습 건수:
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+      <div class="item">
+        <span class="number">03</span>
+        <h3>데이터 정리</h3>
+        <p>
+          제시 자료: 이번 학기 데이터 정리 산출물
+        </p>
+        <p>
+          정리한 데이터 건수:
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 3. 산출물 3개 -->
+    <section id="outputs" aria-labelledby="output-title">
+
+      <h2 id="output-title">
+        이번 학기 산출물 3개
+      </h2>
+
+      <p class="detail">
+        실제 산출물 이름, 작성 내용, 확인 가능한
+        숫자와 사실을 입력하는 영역
+      </p>
+
+      <div class="item">
+        <span class="number">산출물 01</span>
+        <h3>문서 작성 산출물</h3>
+
+        <div class="fact">
+          <p>
+            산출물명:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            작성 내용:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            작성 분량 · 건수:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            확인 가능한 사실:
+            <span class="placeholder">입력 필요</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="number">산출물 02</span>
+        <h3>민원 응대 산출물</h3>
+
+        <div class="fact">
+          <p>
+            산출물명:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            수행 내용:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            응대 · 실습 건수:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            확인 가능한 사실:
+            <span class="placeholder">입력 필요</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="item">
+        <span class="number">산출물 03</span>
+        <h3>데이터 정리 산출물</h3>
+
+        <div class="fact">
+          <p>
+            산출물명:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            정리 내용:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            데이터 건수:
+            <span class="placeholder">입력 필요</span>
+          </p>
+          <p>
+            확인 가능한 사실:
+            <span class="placeholder">입력 필요</span>
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- 4. 사례 1건 -->
+    <section aria-labelledby="case-title">
+
+      <h2 id="case-title">
+        직무 관련 사례 1건
+      </h2>
+
+      <p>
+        사례명:
+        <span class="placeholder">입력 필요</span>
+      </p>
+
+      <div class="case-step">
+        <span class="case-label">
+          1. 문제
+        </span>
+        <p>
+          어떤 문제가 있었는가?
+        </p>
+        <p>
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+      <div class="case-step">
+        <span class="case-label">
+          2. 한 일
+        </span>
+        <p>
+          문제 해결을 위해 직접 수행한 행동과
+          작성한 산출물
+        </p>
+        <p>
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+      <div class="case-step">
+        <span class="case-label">
+          3. 결과
+        </span>
+        <p>
+          확인 가능한 결과와 숫자 · 사실
+        </p>
+        <p>
+          <span class="placeholder">입력 필요</span>
+        </p>
+      </div>
+
+    </section>
+
+    <!-- 5. 일하는 태도 -->
+    <section aria-labelledby="attitude-title">
+
+      <h2 id="attitude-title">
+        일하는 태도
+      </h2>
+
+      <p class="detail">
+        민원 부서 업무에서 적용할 3가지 원칙
+      </p>
+
+      <ol class="attitude">
+        <li>
+          <strong>문서 작성</strong><br>
+          작성 근거 확인 · 문서 내용 점검
+        </li>
+
+        <li>
+          <strong>민원 응대</strong><br>
+          민원 내용 확인 · 처리 과정 안내
+        </li>
+
+        <li>
+          <strong>데이터 정리</strong><br>
+          원자료 대조 · 분류 기준 준수
+        </li>
+      </ol>
+
+    </section>
+
+    <!-- 6. 연락처 -->
+    <section aria-labelledby="contact-title">
+
+      <h2 id="contact-title">
+        연락처
+      </h2>
+
+      <p>
+        지원 기관:
+        <strong>한빛시청</strong>
+      </p>
+
+      <p>
+        지원 부서:
+        <strong>민원 부서</strong>
+      </p>
+
+      <p>
+        연락 방법:
+        <span class="placeholder">입력 필요</span>
+      </p>
+
+      <p class="detail">
+        이름, 전화번호, 이메일 주소 등
+        개인정보는 기재하지 않았습니다.
+      </p>
+
+    </section>
+
+    <footer>
+      한빛시청 민원 부서 지원용 개인 강점 페이지
+    </footer>
+
+  </main>
+</body>
+</html>
